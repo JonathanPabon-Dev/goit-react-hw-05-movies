@@ -24,7 +24,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build -b /goit-react-hw-05-movies",
+    "deploy": "gh-pages -d build -b gh-pages",
     "lint:js": "eslint src/**/*.{js,jsx}"
   },
   "eslintConfig": {

@@ -12,7 +12,7 @@ import {
 
 const IMG_BASE_URL = 'https://image.tmdb.org/t/p/original/';
 
-export const MovieInfo = ({ movie }) => {
+const MovieInfo = ({ movie }) => {
   return (
     <>
       <MovieCard className="d-flex my-5">
@@ -43,3 +43,5 @@ export const MovieInfo = ({ movie }) => {
     </>
   );
 };
+
+export default MovieInfo;

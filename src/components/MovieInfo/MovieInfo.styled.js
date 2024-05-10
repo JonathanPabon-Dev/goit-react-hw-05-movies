@@ -30,8 +30,10 @@ export const Subtitle = styled.h4`
 `;
 
 export const Poster = styled.img`
-  max-width: 300px;
+  width: 300px;
+  height: 100%;
   border-radius: 5px;
+  aspect-ratio: 2/3;
 `;
 
 export const Genres = styled.ul`

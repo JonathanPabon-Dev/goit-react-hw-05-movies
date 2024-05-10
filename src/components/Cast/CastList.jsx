@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { CastItem } from './CastItem';
 
-export const CastList = ({ credits }) => {
+const CastList = ({ credits }) => {
   return (
-    <ul className="mt-3 d-flex flex-wrap">
+    <ul className="my-5 d-flex flex-wrap gap-4">
       {credits
         .filter(actor => actor.profile_path !== null)
         .map(castItem => (
-          <li key={castItem.cast_id} className="m-4 list-unstyled">
+          <li key={castItem.cast_id} className="list-unstyled">
             <CastItem credit={castItem} />
           </li>
         ))}
@@ -19,3 +19,5 @@ export const CastList = ({ credits }) => {
 CastList.propTypes = {
   credits: PropTypes.array.isRequired,
 };
+
+export default CastList;

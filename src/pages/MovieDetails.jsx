@@ -1,10 +1,11 @@
-import React, { useState, useEffect, Suspense } from 'react';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { fetchMovieDetails } from '../api/api';
 import { useParams, useLocation, Link, Outlet } from 'react-router-dom';
-import { MovieInfo } from '../components/MovieInfo/MovieInfo';
 import { BackBtn } from '../components/App.styled';
 
-export const MovieDetails = () => {
+const MovieInfo = lazy(() => import('../components/MovieInfo/MovieInfo'));
+
+const MovieDetails = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState([]);
   const location = useLocation();
@@ -28,9 +29,13 @@ export const MovieDetails = () => {
         <BackBtn className="my-2" to={backLink}>
           <i className="bi bi-arrow-left"></i>
         </BackBtn>
-        <MovieInfo movie={movie} />
+        {movie && (
+          <Suspense>
+            <MovieInfo movie={movie} />
+          </Suspense>
+        )}
 
-        <div className="d-flex gap-3">
+        <div className="d-flex gap-2">
           <Link className="btn btn-outline-dark" to={`/movies/${id}/cast`}>
             Cast
           </Link>
@@ -45,3 +50,5 @@ export const MovieDetails = () => {
     </>
   );
 };
+
+export default MovieDetails;

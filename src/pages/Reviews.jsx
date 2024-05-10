@@ -3,7 +3,7 @@ import { fetchMovieReviews } from '../api/api';
 import { useParams } from 'react-router-dom';
 import { ReviewList } from '../components/ReviewList/ReviewList';
 
-export const Reviews = () => {
+const Reviews = () => {
   const [reviews, setReviews] = useState([]);
   const { id } = useParams();
 
@@ -24,8 +24,10 @@ export const Reviews = () => {
       {reviews.length > 0 ? (
         <ReviewList reviews={reviews} />
       ) : (
-        <p>There are no reviews for this movie.</p>
+        <p className="mt-3">There are no reviews for this movie.</p>
       )}
     </>
   );
 };
+
+export default Reviews;

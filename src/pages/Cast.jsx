@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { fetchMovieCredits } from '../api/api';
 import { useParams } from 'react-router-dom';
-import { CastList } from '../components/Cast/CastList';
 
-export const Cast = () => {
+const CastList = lazy(() => import('../components/Cast/CastList'));
+
+const Cast = () => {
   const [credits, setCredits] = useState([]);
   const { id } = useParams();
 
@@ -19,5 +20,15 @@ export const Cast = () => {
     fetchCredits();
   }, [id]);
 
-  return <>{credits.length > 0 && <CastList credits={credits} />}</>;
+  return (
+    <>
+      {credits.length > 0 && (
+        <Suspense>
+          <CastList credits={credits} />
+        </Suspense>
+      )}
+    </>
+  );
 };
+
+export default Cast;

@@ -5,7 +5,6 @@ export const Review = styled.div`
   flex-direction: column;
   gap: 15px;
   padding: 20px;
-
   border: 1px solid #313b7022;
   border-radius: 10px;
 `;

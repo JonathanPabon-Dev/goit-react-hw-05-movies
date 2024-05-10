@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy } from 'react';
 import { fetchSearchMovies } from '../../api/api';
-import { MovieList } from '../../components/MovieList/MovieList';
 import { Searchform, SearchInput, SearchBtn } from './Searchbar.styled';
+
+const MovieList = lazy(() => import('../../components/MovieList/MovieList'));
 
 export const Searchbar = () => {
   const [movies, setMovies] = useState([]);

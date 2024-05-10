@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { fetchTrendMovies } from '../api/api';
-import { MovieList } from '../components/MovieList/MovieList';
 
-export const Home = () => {
+const MovieList = lazy(() => import('../components/MovieList/MovieList'));
+
+const Home = () => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -23,10 +24,14 @@ export const Home = () => {
         Trending Today
       </h2>
       {movies.length > 0 ? (
-        <MovieList movies={movies} />
+        <Suspense>
+          <MovieList movies={movies} />
+        </Suspense>
       ) : (
         <p>No movies found.</p>
       )}
     </div>
   );
 };
+
+export default Home;

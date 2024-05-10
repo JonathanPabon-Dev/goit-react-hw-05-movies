@@ -9,7 +9,7 @@ const MovieDetails = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState([]);
   const location = useLocation();
-  const backLink = location.state?.from ?? '/';
+  const backLink = location.state?.from ?? 'goit-react-hw-05-movies/';
 
   useEffect(() => {
     const fetchDetails = async () => {

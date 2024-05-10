@@ -36,10 +36,16 @@ const MovieDetails = () => {
         )}
 
         <div className="d-flex gap-2">
-          <Link className="btn btn-outline-dark" to={`/movies/${id}/cast`}>
+          <Link
+            className="btn btn-outline-dark"
+            to={`goit-react-hw-05-movies/movies/${id}/cast`}
+          >
             Cast
           </Link>
-          <Link className="btn btn-outline-dark" to={`/movies/${id}/reviews`}>
+          <Link
+            className="btn btn-outline-dark"
+            to={`goit-react-hw-05-movies/movies/${id}/reviews`}
+          >
             Reviews
           </Link>
         </div>

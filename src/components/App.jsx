@@ -18,16 +18,16 @@ const App = () => {
       <Content>
         <Routes>
           <Route
-            path="/"
+            path="goit-react-hw-05-movies/"
             element={
               <Suspense>
                 <HomeLazy />
               </Suspense>
             }
           />
-          <Route path="/movies" element={<Movies />} />
+          <Route path="goit-react-hw-05-movies/movies" element={<Movies />} />
           <Route
-            path="/movies/:id"
+            path="goit-react-hw-05-movies/movies/:id"
             element={
               <Suspense>
                 <MovieDetailsLazy />

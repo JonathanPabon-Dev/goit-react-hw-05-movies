@@ -10,7 +10,7 @@ const MovieList = ({ movies }) => {
       {movies.map(movie => (
         <li key={movie.id} className="my-2">
           <Link
-            to={`goit-react-hw-05-movies/movies/${movie.id}`}
+            to={`/movies/${movie.id}`}
             state={{ from: location }}
             className="text-decoration-none"
           >

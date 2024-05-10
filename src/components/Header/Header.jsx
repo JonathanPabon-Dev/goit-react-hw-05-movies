@@ -12,10 +12,10 @@ export const Header = () => {
           <span>M</span>
         </Logo>
         <nav>
-          <Link to="goit-react-hw-05-movies/" end>
+          <Link to="/" end>
             Home
           </Link>
-          <Link to="goit-react-hw-05-movies/movies">Movies</Link>
+          <Link to="/movies">Movies</Link>
         </nav>
       </Content>
     </Head>

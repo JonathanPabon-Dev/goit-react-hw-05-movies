@@ -9,7 +9,7 @@ const MovieDetails = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState([]);
   const location = useLocation();
-  const backLink = location.state?.from ?? 'goit-react-hw-05-movies/';
+  const backLink = location.state?.from ?? '/';
 
   useEffect(() => {
     const fetchDetails = async () => {
@@ -36,16 +36,10 @@ const MovieDetails = () => {
         )}
 
         <div className="d-flex gap-2">
-          <Link
-            className="btn btn-outline-dark"
-            to={`goit-react-hw-05-movies/movies/${id}/cast`}
-          >
+          <Link className="btn btn-outline-dark" to={`/movies/${id}/cast`}>
             Cast
           </Link>
-          <Link
-            className="btn btn-outline-dark"
-            to={`goit-react-hw-05-movies/movies/${id}/reviews`}
-          >
+          <Link className="btn btn-outline-dark" to={`/movies/${id}/reviews`}>
             Reviews
           </Link>
         </div>

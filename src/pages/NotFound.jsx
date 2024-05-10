@@ -18,10 +18,7 @@ export const NotFound = () => {
       >
         Page Not Found
       </span>
-      <Link
-        className="d-flex justify-content-center"
-        to="goit-react-hw-05-movies/"
-      >
+      <Link className="d-flex justify-content-center" to="/">
         Go Home
       </Link>
     </div>
